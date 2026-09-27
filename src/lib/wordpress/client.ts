@@ -66,6 +66,11 @@ export async function getPost(slug: string): Promise<WpPost | null> {
   return data[0] ?? null;
 }
 
+export async function getReport(slug: string): Promise<WpPost | null> {
+  const { data } = await wpFetch<WpPost[]>("report", { slug, _embed: true });
+  return data[0] ?? null;
+}
+
 export async function getPage(slug: string): Promise<WpPage | null> {
   const { data } = await wpFetch<WpPage[]>("pages", { slug, _embed: true });
   return data[0] ?? null;

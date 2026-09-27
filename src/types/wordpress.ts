@@ -22,6 +22,7 @@ export type WpAuthor = {
 
 export type WpPost = {
   id: number;
+  type?: string;
   date: string;
   modified: string;
   slug: string;

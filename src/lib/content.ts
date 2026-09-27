@@ -1,7 +1,7 @@
 export function decodeHtml(value: string) {
   return value
-    .replace(/&#8211;|&ndash;/g, "-")
-    .replace(/&#8212;|&mdash;/g, "-")
+    .replace(/&#8211;|&ndash;|–/g, "-")
+    .replace(/&#8212;|&mdash;|—/g, "-")
     .replace(/&#8216;|&#8217;|&rsquo;|&lsquo;/g, "'")
     .replace(/&#8220;|&#8221;|&ldquo;|&rdquo;/g, '"')
     .replace(/&amp;/g, "&")
