@@ -1,4 +1,4 @@
-import type { WpCollection, WpPage, WpPost } from "@/types/wordpress";
+import type { WpCollection, WpPage, WpPost, WpTerm } from "@/types/wordpress";
 
 const WORDPRESS_URL = (process.env.WORDPRESS_URL ?? "https://nativeinsightng.com").replace(/\/$/, "");
 const REVALIDATE_SECONDS = Number(process.env.WORDPRESS_REVALIDATE_SECONDS ?? 300);
@@ -30,10 +30,19 @@ async function wpFetch<T>(path: string, query?: Record<string, QueryValue>): Pro
   return { data: (await response.json()) as T, headers: response.headers };
 }
 
-export async function getPosts({ page = 1, perPage = 9 }: { page?: number; perPage?: number } = {}): Promise<WpCollection<WpPost>> {
+export async function getPosts({
+  page = 1,
+  perPage = 9,
+  category,
+}: {
+  page?: number;
+  perPage?: number;
+  category?: number;
+} = {}): Promise<WpCollection<WpPost>> {
   const { data, headers } = await wpFetch<WpPost[]>("posts", {
     page,
     per_page: perPage,
+    categories: category,
     _embed: true,
   });
 
@@ -42,6 +51,14 @@ export async function getPosts({ page = 1, perPage = 9 }: { page?: number; perPa
     total: Number(headers.get("X-WP-Total") ?? data.length),
     totalPages: Number(headers.get("X-WP-TotalPages") ?? 1),
   };
+}
+
+export async function getCategories(): Promise<WpTerm[]> {
+  const { data } = await wpFetch<WpTerm[]>("categories", {
+    per_page: 100,
+    hide_empty: true,
+  });
+  return data;
 }
 
 export async function getPost(slug: string): Promise<WpPost | null> {
