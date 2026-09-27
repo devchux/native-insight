@@ -40,16 +40,14 @@ const columns = [
   },
 ] as const;
 
-export function SiteFooter({ showCta = true }: { showCta?: boolean }) {
+export function SiteFooter({ showCta = true, ctaTitle = "Tell us your challenge." }: { showCta?: boolean; ctaTitle?: string }) {
   return (
     <footer className="relative overflow-hidden bg-deep text-white before:absolute before:inset-0 before:bg-[radial-gradient(60%_80%_at_88%_0%,rgba(124,58,237,.45),transparent_60%)]">
       <Container className="relative">
         {showCta ? <div className="border-b border-white/15 py-[clamp(56px,7vw,90px)]">
           <Kicker light>Let&apos;s build</Kicker>
           <h2 className="mt-5 max-w-[16ch] font-display text-[clamp(2.75rem,6vw,5.25rem)] leading-none tracking-[-.035em]">
-            Tell us your
-            <br />
-            challenge.
+            {ctaTitle}
           </h2>
           <div className="mt-9 flex flex-wrap gap-3">
             <ButtonLink href="/contact" variant="light">

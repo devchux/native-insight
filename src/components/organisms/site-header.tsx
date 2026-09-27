@@ -148,7 +148,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="mt-5 flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 text-sm font-bold text-white"
+            className="mt-5 flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 text-sm font-bold text-white!"
           >
             Tell us your challenge <ArrowRight size={17} weight="bold" />
           </Link>

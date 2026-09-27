@@ -139,6 +139,71 @@ button, input, textarea { font: inherit; }
 .partner-mask { -webkit-mask: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
 .partner-marquee { display: flex; width: max-content; gap: 14px; animation: partner-scroll 28s linear infinite; }
 
+/* Our Team */
+.team-page { color: #19132e; background: #fff; }
+.team-hero { padding: 170px 0 36px; }
+.team-crumb { margin-bottom: 23px; color: #4c4564; font-size: 14px; }
+.team-hero .kicker, .team-leadership .kicker { color: #32079c; }
+.team-hero h1 { margin-top: 15px; max-width: 15ch; color: #32079c; font-family: var(--font-display); font-size: clamp(40px, 6vw, 64px); font-weight: 700; line-height: .98; letter-spacing: -.04em; }
+.team-intro { margin-top: 17px; max-width: 92ch; color: #4c4564; font-size: 17px; line-height: 1.55; }
+.team-map-section { padding: clamp(36px, 6vw, 76.8px) 0; }
+.team-map-wrap { display: grid; grid-template-columns: 1.15fr .85fr; align-items: stretch; gap: clamp(24px, 3vw, 48px); }
+.team-map-stage { position: relative; min-height: 480px; overflow: hidden; border: 1px solid rgb(25 19 46 / .12); background: radial-gradient(80% 70% at 50% 14%, rgb(50 7 156 / .08), transparent 70%), #f6f4fc; padding: 8px; }
+.team-map-root { min-height: 100%; }
+.team-africa-svg { display: block; width: 100%; height: auto; }
+.team-country { cursor: default; fill: #e4dcf6; stroke: #fff; stroke-width: .9; transition: fill .2s cubic-bezier(.22,.61,.36,1), stroke .2s; }
+.team-country.has-presence { cursor: pointer; fill: var(--country-color); }
+.team-country:hover { fill: #b7a2ec; }
+.team-country.has-presence:hover { filter: brightness(1.12); }
+.team-country.is-selected { stroke: #32079c; stroke-width: 2; }
+.team-map-tip { position: absolute; z-index: 5; padding: 9px 13px; transform: translate(-50%, -140%); pointer-events: none; white-space: nowrap; border: 1px solid rgb(25 19 46 / .2); border-radius: 10px; background: #fff; opacity: 0; box-shadow: 0 14px 34px rgb(25 19 46 / .2); font-size: 13px; transition: opacity .15s; }
+.team-map-tip b, .team-map-tip span { display: block; }
+.team-map-tip b { font-family: var(--font-display); font-size: 14px; }
+.team-map-tip span { margin-top: 2px; color: #837b97; font-family: var(--font-display); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; }
+.team-map-panel { display: flex; flex-direction: column; min-width: 0; border: 1px solid rgb(25 19 46 / .12); background: #f6f4fc; padding: clamp(26px, 3vw, 40px); }
+.team-map-kicker { margin-bottom: 18px; color: #32079c; font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.team-map-title { font-family: var(--font-display); font-size: clamp(30px, 3.4vw, 46px); font-weight: 700; line-height: .98; letter-spacing: -.02em; }
+.team-map-title.small { font-size: 30px; }
+.team-map-lead { margin-top: 20px; color: #4c4564; font-size: 15.5px; line-height: 1.55; }
+.team-map-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; padding-top: 26px; border-top: 1px solid rgb(25 19 46 / .12); }
+.team-map-stats.two { grid-template-columns: 1.3fr 1fr; }
+.team-map-stats b { display: block; color: #32079c; font-family: var(--font-display); font-size: 34px; line-height: 1; }
+.team-map-stats span, .team-map-legend > span, .team-map-focus > span { display: block; margin-top: 8px; color: #837b97; font-family: var(--font-display); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; }
+.team-map-legend, .team-map-focus { margin-top: 30px; padding-top: 24px; border-top: 1px solid rgb(25 19 46 / .12); }
+.team-map-legend > span, .team-map-focus > span { margin-top: 0; }
+.team-map-legend i { display: block; height: 12px; margin-top: 10px; border-radius: 999px; background: linear-gradient(90deg, #c9b6f0, #32079c); }
+.team-map-legend > div { display: flex; justify-content: space-between; margin-top: 10px; color: #837b97; font-size: 12px; }
+.team-map-focus > div { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
+.team-map-focus em { border: 1px solid rgb(25 19 46 / .12); padding: 7px 10px; font-size: 12px; font-style: normal; }
+.team-map-back { align-self: flex-start; margin-top: auto; padding: 11px 18px; border: 1px solid rgb(25 19 46 / .2); border-radius: 999px; background: transparent; color: #4c4564; font-size: 14px; font-weight: 600; cursor: pointer; }
+.team-map-caption { margin-top: 15px; color: #837b97; font-size: 12px; font-style: italic; text-align: center; }
+.team-map-fallback { display: grid; min-height: 460px; place-content: center; gap: 8px; padding: 40px; text-align: center; }
+.team-network-copy { margin-top: 28px; max-width: 92ch; color: #4c4564; font-size: 16px; line-height: 1.55; }
+.team-leadership { padding: clamp(36px, 6vw, 76.8px) 0; border-block: 1px solid rgb(25 19 46 / .12); background: #f6f4fc; }
+.team-leadership h2 { margin-top: 15px; color: #32079c; font-family: var(--font-display); font-size: clamp(34px, 4.6vw, 60px); font-weight: 700; line-height: 1.02; letter-spacing: -.035em; }
+.team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 30px; margin-top: 22px; }
+.team-person-photo { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid rgb(25 19 46 / .12); background: #e4dcf6; }
+.team-person-photo img { object-fit: cover; }
+.team-person h3 { margin-top: 16px; font-family: var(--font-display); font-size: 17px; font-weight: 700; line-height: 1.2; }
+.team-person p { margin-top: 6px; color: #19132e; font-size: 12px; font-style: italic; line-height: 1.35; letter-spacing: .05em; text-transform: capitalize; }
+
+@media (max-width: 920px) {
+  .team-map-wrap { grid-template-columns: 1fr; }
+  .team-map-panel { min-height: 440px; }
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 559px) {
+  .team-hero { padding: 126px 0 28px; }
+  .team-crumb { margin-bottom: 18px; }
+  .team-hero h1 { font-size: 42px; }
+  .team-intro { font-size: 16px; }
+  .team-map-stage { min-height: 0; }
+  .team-map-panel { min-height: 390px; }
+  .team-grid { grid-template-columns: 1fr; gap: 34px; }
+  .team-leadership h2 { font-size: 36px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
