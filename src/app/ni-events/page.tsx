@@ -1,0 +1,2 @@
+import { CopySection, PageShell } from "@/components/organisms/page-shell";
+export default function EventsPage() { return <PageShell kicker="Events" title="Conversations that move ideas forward." introduction="Forums, briefings and working sessions connecting evidence with action."><CopySection title="Meet us in the room."><p>Upcoming events and registration information are maintained through the Native Insight publishing workflow.</p></CopySection></PageShell>; }
