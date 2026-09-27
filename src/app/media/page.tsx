@@ -1,4 +1,14 @@
 import type { Metadata } from "next";
-import { WpCollectionPage } from "@/components/organisms/wp-collection-page";
-export const metadata: Metadata = { title: "Media" };
-export default function MediaPage() { return <WpCollectionPage type="media-piece" kicker="Media" title="Native Insight in the conversation." introduction="Interviews, commentary and public appearances from our team and collaborators." />; }
+import { MediaPage } from "@/components/organisms/media-page";
+import { getMediaPageContent } from "@/lib/wordpress/media-page";
+
+export const metadata: Metadata = {
+  title: "Media",
+  description:
+    "Native Insight newsroom, press coverage, field gallery and media resources.",
+};
+
+export default async function Page() {
+  const content = await getMediaPageContent();
+  return <MediaPage content={content} />;
+}
