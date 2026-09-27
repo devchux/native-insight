@@ -1,13 +1,63 @@
-"use client";
+import type { ContactPageContent } from "@/lib/wordpress/contact-page";
 
-import { useState, type FormEvent } from "react";
+const controlClass =
+  "mt-2 w-full border border-ink/20 bg-white px-4 py-3.5 text-base text-ink outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/15";
 
-export function ContactForm() {
-  const [message, setMessage] = useState("");
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setMessage("The WordPress form connection is awaiting its secure server endpoint. You can reach us directly at consult@nativeinsights.com.");
-  }
-
-  return <form onSubmit={submit} className="grid gap-5"><label className="grid gap-2 text-sm font-semibold">Name<input name="name" required autoComplete="name" className="min-h-12 border border-ink/20 px-4 outline-none focus:border-brand" /></label><label className="grid gap-2 text-sm font-semibold">Email<input name="email" required type="email" autoComplete="email" className="min-h-12 border border-ink/20 px-4 outline-none focus:border-brand" /></label><label className="grid gap-2 text-sm font-semibold">Subject<select name="subject" className="min-h-12 border border-ink/20 bg-white px-4 outline-none focus:border-brand"><option>Research & Strategy Advisory</option><option>Business Transformation & AI</option><option>Digital Economy & Government</option><option>Startups & SME Support</option><option>Data-driven Insights</option></select></label><label className="grid gap-2 text-sm font-semibold">Message<textarea name="message" required rows={7} className="border border-ink/20 p-4 outline-none focus:border-brand" /></label><button className="w-fit rounded-full bg-brand px-8 py-4 text-sm font-bold text-white">Send enquiry</button><p aria-live="polite" className="text-sm leading-6 text-brand">{message}</p></form>;
+export function ContactForm({ content }: { content: ContactPageContent }) {
+  return (
+    <form
+      action="https://nativeinsightng.com/contact/"
+      method="post"
+      className="grid gap-3.5"
+    >
+      <input type="hidden" name="post_id" value={content.wordpressPostId} />
+      <input type="hidden" name="form_id" value={content.wordpressFormId} />
+      <input type="hidden" name="referer_title" value="Contact - Native Insight" />
+      <input type="hidden" name="queried_id" value={content.wordpressPostId} />
+      {content.fields.map((field) => (
+        <div key={field.id}>
+          <label
+            htmlFor={`form-field-${field.id}`}
+            className="block text-[11px] font-semibold uppercase tracking-[.16em] text-muted"
+          >
+            {field.label} {field.required ? <span className="text-brand">*</span> : null}
+          </label>
+          {field.type === "select" ? (
+            <select
+              id={`form-field-${field.id}`}
+              name={`form_fields[${field.id}]`}
+              required={field.required}
+              defaultValue={field.options?.[0]}
+              className={controlClass}
+            >
+              {field.options?.map((option) => <option key={option}>{option}</option>)}
+            </select>
+          ) : field.type === "textarea" ? (
+            <textarea
+              id={`form-field-${field.id}`}
+              name={`form_fields[${field.id}]`}
+              required={field.required}
+              rows={5}
+              className={controlClass}
+            />
+          ) : (
+            <input
+              id={`form-field-${field.id}`}
+              name={`form_fields[${field.id}]`}
+              required={field.required}
+              type={field.type}
+              autoComplete={field.id === "name" ? "name" : field.id === "email" ? "email" : undefined}
+              className={controlClass}
+            />
+          )}
+        </div>
+      ))}
+      <button
+        type="submit"
+        className="mt-1 min-h-14 w-full bg-brand px-7 py-4 text-base font-bold text-white transition hover:bg-brand-deep active:translate-y-px"
+      >
+        {content.submitLabel}
+      </button>
+    </form>
+  );
 }
