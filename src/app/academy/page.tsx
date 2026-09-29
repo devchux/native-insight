@@ -1,2 +1,10 @@
-import { CopySection, PageShell } from "@/components/organisms/page-shell";
-export default function AcademyPage() { return <PageShell kicker="Academy" title="Knowledge that builds capability." introduction="Learning experiences designed to help teams understand change and act on it."><CopySection title="Practical learning for ambitious teams."><p>Programmes and upcoming learning opportunities are managed through the Native Insight publishing team.</p></CopySection></PageShell>; }
+import type { Metadata } from "next";
+import { AcademyPage } from "@/components/organisms/academy-page";
+import { getAcademyPageContent } from "@/lib/wordpress/academy-page";
+
+export const metadata: Metadata = { title: "Academy" };
+
+export default async function Page() {
+  const content = await getAcademyPageContent();
+  return <AcademyPage content={content} />;
+}

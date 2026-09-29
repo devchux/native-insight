@@ -8,6 +8,7 @@ import { Container } from "@/components/atoms/container";
 import { Kicker } from "@/components/atoms/kicker";
 
 const heroImages = [
+  "https://nativeinsightng.com/wp-content/uploads/2026/09/19358e93df94b780366f28ee17085056-xxlarge.jpeg",
   "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-10.25.01.jpeg",
   // "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-13.34.45.jpeg",
   "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-10.53.47.jpeg",

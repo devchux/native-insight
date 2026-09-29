@@ -16,10 +16,14 @@ function endpoint(path: string, query: Record<string, QueryValue> = {}) {
 async function wpFetch<T>(path: string, query?: Record<string, QueryValue>): Promise<{ data: T; headers: Headers }> {
   let response: Response | undefined;
   for (let attempt = 0; attempt < 3; attempt += 1) {
-    response = await fetch(endpoint(path, query), {
-      next: { revalidate: REVALIDATE_SECONDS, tags: ["wordpress", `wordpress:${path.split("/")[0]}`] },
-    });
-    if (response.ok || response.status < 500) break;
+    try {
+      response = await fetch(endpoint(path, query), {
+        next: { revalidate: REVALIDATE_SECONDS, tags: ["wordpress", `wordpress:${path.split("/")[0]}`] },
+      });
+      if (response.ok || response.status < 500) break;
+    } catch {
+      response = undefined;
+    }
     await new Promise((resolve) => setTimeout(resolve, 250 * (attempt + 1)));
   }
 

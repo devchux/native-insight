@@ -69,16 +69,18 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
                     className="opacity-60 transition group-hover:rotate-180"
                   />
                 </Link>
-                <div className="invisible absolute left-0 top-[calc(100%+6px)] min-w-50 translate-y-2 border border-ink/10 bg-white p-2 text-ink opacity-0 shadow-[0_20px_44px_rgba(25,19,46,.16)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                  {link.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      className="block px-3.5 py-2.5 text-sm font-semibold text-ink-dim transition hover:bg-soft hover:text-brand"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
+                <div className="invisible absolute left-0 top-full z-10 min-w-50 translate-y-2 pt-2 text-ink opacity-0 transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                  <div className="border border-ink/10 bg-white p-2 shadow-[0_20px_44px_rgba(25,19,46,.16)]">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="block px-3.5 py-2.5 text-sm font-semibold text-ink-dim transition hover:bg-soft hover:text-brand"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             ) : (
