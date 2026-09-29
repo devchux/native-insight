@@ -73,35 +73,35 @@ export default function WhatWeDoPage() {
       <main className="bg-white text-ink">
         <section className="pb-[clamp(44px,6vw,84px)] pt-42.5">
           <Container wide>
-            <div className="grid items-center gap-10 lg:grid-cols-[.88fr_1.12fr] lg:gap-[clamp(48px,6vw,92px)]">
-              <div>
-                <div className="[&_.kicker]:text-brand [&_.kicker]:tracking-[.01em] [&_.kicker>span]:bg-brand">
-                  <Kicker>Our practice</Kicker>
-                </div>
-                <h1 className="mt-3.75 max-w-[14ch] font-display text-[clamp(2rem,5vw,4rem)] font-bold leading-[.98] tracking-[-.045em] text-brand">
-                  We help African businesses grow, transform, and secure Africa’s
-                  digital future
-                </h1>
-                <p className="mt-5.5 max-w-[62ch] text-sm leading-[1.55] text-ink-dim">
-                  We combine an agile approach with rigorous research tools to grow
-                  businesses, give investors market insight, and evaluate impact for
-                  governments and development partners, problem-specific,
-                  sector-specific, pan-African.
-                </p>
-              </div>
-              <div className="relative aspect-[3/2] overflow-hidden bg-soft">
-                <Image
-                  src="https://nativeinsightng.com/wp-content/uploads/2026/09/fb4cf847674c202a9434985307e7abd7-xxlarge.jpeg"
-                  alt="African performers engaging with an attendee at a professional event"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 54vw, calc(100vw - 40px)"
-                  className="object-cover"
-                />
-              </div>
+            <div className="[&_.kicker]:text-brand [&_.kicker]:tracking-[.01em] [&_.kicker>span]:bg-brand">
+              <Kicker>Our practice</Kicker>
             </div>
+            <h1 className="mt-3.75 max-w-[14ch] font-display text-[clamp(2rem,5vw,4rem)] font-bold leading-[.98] tracking-[-.045em] text-brand">
+              We help African businesses grow, transform, and secure Africa’s
+              digital future
+            </h1>
+            <p className="mt-5.5 max-w-[94ch] text-sm leading-[1.55] text-ink-dim">
+              We combine an agile approach with rigorous research tools to grow
+              businesses, give investors market insight, and evaluate impact for
+              governments and development partners, problem-specific,
+              sector-specific, pan-African.
+            </p>
           </Container>
         </section>
+
+        <Container wide as="section" className="pb-[clamp(44px,6vw,84px)]">
+          <div className="relative aspect-3/2 overflow-hidden bg-soft md:aspect-16/7">
+            <Image
+              src="https://nativeinsightng.com/wp-content/uploads/2026/09/fb4cf847674c202a9434985307e7abd7-xxlarge.jpeg"
+              alt="African performers engaging with an attendee at a professional event"
+              fill
+              priority
+              sizes="(min-width: 1280px) 1344px, calc(100vw - 40px)"
+              className="object-cover object-center"
+            />
+          </div>
+        </Container>
+
         <Container wide as="section" className="pb-[clamp(36px,6vw,88px)]">
           <ServicesAccordion items={services} />
         </Container>
