@@ -72,14 +72,14 @@ export default function WhatWeDoPage() {
       <main className="bg-white text-ink">
         <section className="pt-42.5">
           <Container wide>
-            <div className="[&_.kicker]:text-ink [&_.kicker]:tracking-[.01em] [&_.kicker>span]:bg-accent">
+            <div className="[&_.kicker]:text-brand [&_.kicker]:tracking-[.01em] [&_.kicker>span]:bg-brand">
               <Kicker>Our practice</Kicker>
             </div>
-            <h1 className="mt-3.75 max-w-[14ch] font-display text-[clamp(40px,6vw,82px)] font-bold leading-[.98] tracking-[-.045em]">
+            <h1 className="mt-3.75 max-w-[14ch] font-display text-[clamp(2rem,5vw,4rem)] font-bold leading-[.98] tracking-[-.045em] text-brand">
               We help African businesses grow, transform, and secure Africa’s
               digital future
             </h1>
-            <p className="mt-5.5 max-w-[94ch] text-[17px] leading-[1.55] text-ink-dim">
+            <p className="mt-5.5 max-w-[94ch] text-sm leading-[1.55] text-ink-dim">
               We combine an agile approach with rigorous research tools to grow
               businesses, give investors market insight, and evaluate impact for
               governments and development partners, problem-specific,
@@ -92,18 +92,27 @@ export default function WhatWeDoPage() {
         </Container>
         <section className="border-y border-ink/10 bg-soft py-[clamp(36px,6vw,88px)]">
           <Container>
-            <div className="[&_.kicker]:text-ink [&_.kicker]:tracking-[.01em] [&_.kicker>span]:bg-accent">
+            <div className="[&_.kicker]:text-brand [&_.kicker]:tracking-[.01em] [&_.kicker>span]:bg-brand">
               <Kicker>How we work</Kicker>
             </div>
-            <h2 className="mt-3.75 max-w-[18ch] font-display text-[clamp(34px,4.6vw,60px)] font-bold leading-[1.02] tracking-[-.04em]">An agile method, built around your problem.</h2>
+            <h2 className="mt-3.75 max-w-[18ch] font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.02] tracking-[-.04em] text-brand">
+              An agile method, built around your problem.
+            </h2>
             <div className="mt-5 grid grid-cols-1 gap-5.5 min-[521px]:grid-cols-2 min-[861px]:grid-cols-4">
               {approach.map(([title, copy], index) => (
-                <article className="border border-ink/10 bg-soft p-7.5" key={title}>
+                <article
+                  className="border border-ink/10 bg-soft p-7.5"
+                  key={title}
+                >
                   <p className="font-display text-[44px] leading-none text-brand">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mt-4.5 mb-2.5 font-display text-xl font-bold leading-[1.15]">{title}</h3>
-                  <p className="text-[14.5px] leading-[1.55] text-muted">{copy}</p>
+                  <h3 className="mt-4.5 mb-2.5 font-display text-xl font-bold leading-[1.15]">
+                    {title}
+                  </h3>
+                  <p className="text-[14.5px] leading-[1.55] text-muted">
+                    {copy}
+                  </p>
                 </article>
               ))}
             </div>

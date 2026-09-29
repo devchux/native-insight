@@ -36,7 +36,7 @@ export function ContactPage({ content }: { content: ContactPageContent }) {
                   </div>
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[.16em] text-muted">{content.emailLabel}</p>
-                    <a href={content.emailHref} className="mt-3 block break-words text-[clamp(1rem,1.4vw,1.15rem)] text-ink-dim transition hover:text-brand">{content.email}</a>
+                    <a href={content.emailHref} className="mt-3 block wrap-break-word text-[clamp(1rem,1.4vw,1.15rem)] text-ink-dim transition hover:text-brand">{content.email}</a>
                   </div>
                 </div>
               </aside>

@@ -56,7 +56,7 @@ export function Stats() {
           <p className="mt-3 font-display text-[clamp(3.25rem,7vw,5.75rem)] leading-none tracking-[-.04em]">
             {number}
           </p>
-          <p className="mt-4 max-w-[26ch] text-[15px] leading-6 text-ink-dim">
+          <p className="mt-4 max-w-[26ch] text-sm leading-6 text-ink-dim">
             {copy}
           </p>
         </div>
@@ -71,7 +71,7 @@ export function Services() {
       <Container>
         <Kicker>What we do</Kicker>
         <div className="mt-5 flex flex-col justify-between gap-7 md:flex-row md:items-end">
-          <h2 className="max-w-3xl font-display text-[clamp(2rem,4.6vw,3.75rem)] leading-[1.02] tracking-[-.03em]">
+          <h2 className="max-w-xl font-display text-[clamp(2rem,4vw,3rem)] leading-[1.02] tracking-[-.03em]">
             Solutions that unlock great value.
           </h2>
           <Link href="/what-we-do" className="font-bold text-brand">
@@ -90,7 +90,7 @@ export function LatestInsights({ posts }: { posts: WpPost[] }) {
       <Container>
         <Kicker>Latest insights</Kicker>
         <div className="mt-5 flex flex-col justify-between gap-7 md:flex-row md:items-end">
-          <h2 className="max-w-3xl font-display text-[clamp(2rem,4.6vw,3.75rem)] leading-[1.02] tracking-[-.03em]">
+          <h2 className="max-w-xl font-display text-[clamp(2rem,4vw,3rem)] leading-[1.02] tracking-[-.03em]">
             Work with us into the future of business.
           </h2>
           <Link href="/insights" className="font-bold text-brand">
@@ -121,7 +121,7 @@ export function LatestInsights({ posts }: { posts: WpPost[] }) {
                   <p className="mb-4 text-[11px] uppercase tracking-[.12em] text-ink-dim">
                     {terms.map((term) => term.name).join(", ")}
                   </p>
-                  <h3 className="font-display text-[22px] leading-[1.15] tracking-[-.02em]">
+                  <h3 className="font-display text-[clamp(1rem,1.2vw,1.2rem)] tracking-[-.02em]">
                     {decodeHtml(post.title.rendered)}
                   </h3>
                   <Link

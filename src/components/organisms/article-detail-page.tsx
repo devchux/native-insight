@@ -44,7 +44,7 @@ function RelatedCard({ post }: { post: WpPost }) {
             {terms.map((term) => term.name).join(", ")}
           </p>
         ) : null}
-        <h3 className="mt-4 font-display text-xl font-bold leading-[1.15] tracking-[-.025em] text-brand">
+        <h3 className="mt-4 font-display text-xl font-bold leading-[1.15] tracking-tight text-brand">
           <Link href={`/${post.slug}`} className="transition hover:text-accent">
             {title}
           </Link>

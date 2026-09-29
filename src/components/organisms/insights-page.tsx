@@ -87,7 +87,7 @@ function InsightCard({ post }: { post: WpPost }) {
       </Link>
       <div className="flex flex-1 flex-col p-6 md:p-7">
         <CategoryLabel post={post} />
-        <h3 className="mt-4 font-display text-[clamp(1.25rem,1.7vw,1.55rem)] font-bold leading-[1.17] tracking-[-.025em] text-brand">
+        <h3 className="mt-4 font-display text-[clamp(1.25rem,1.7vw,1.55rem)] font-bold leading-[1.17] tracking-tight text-brand">
           <Link href={`/${post.slug}`} className="transition hover:text-accent">
             {decodeHtml(post.title.rendered)}
           </Link>
@@ -114,11 +114,6 @@ export function InsightsPage({ content, posts, categories, activeCategory }: Ins
       <main className="bg-white text-ink">
         <section className="pb-[clamp(54px,7vw,94px)] pt-35 md:pt-50">
           <Container wide>
-            <nav aria-label="Breadcrumb" className="mb-7 text-sm text-ink-dim">
-              <Link href="/" className="transition hover:text-brand">Home</Link>
-              <span className="mx-2.5 text-muted">/</span>
-              <span>Insights</span>
-            </nav>
             <Kicker>{content.kicker}</Kicker>
             <h1 className="mt-5 max-w-5xl font-display text-[clamp(3.2rem,5vw,4.35rem)] font-bold leading-[.98] tracking-[-.045em] text-brand">
               {content.title}

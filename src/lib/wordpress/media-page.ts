@@ -34,7 +34,7 @@ export type MediaPageContent = {
 };
 
 const fallback: MediaPageContent = {
-  kicker: "Newsroom",
+  kicker: "In the news",
   title: "In the spotlight",
   introduction:
     "We break down market activities, events, and the numbers to keep you informed on the latest market trends, investment, and opportunities across markets.",

@@ -1,13 +1,15 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Play } from "@phosphor-icons/react/dist/ssr";
+import { Play } from "@phosphor-icons/react/dist/ssr";
 import { Container } from "@/components/atoms/container";
 import { Kicker } from "@/components/atoms/kicker";
+import { GalleryReveal } from "@/components/organisms/gallery-reveal";
 import { SiteFooter } from "@/components/organisms/site-footer";
 import { SiteHeader } from "@/components/organisms/site-header";
 import type { MediaPageContent } from "@/lib/wordpress/media-page";
 
 export function MediaPage({ content }: { content: MediaPageContent }) {
+  const galleryRemainder = content.gallery.length % 4;
+
   return (
     <>
       <SiteHeader />
@@ -15,10 +17,10 @@ export function MediaPage({ content }: { content: MediaPageContent }) {
         <section className="pb-[clamp(64px,8vw,112px)] pt-35 md:pt-50">
           <Container wide>
             <Kicker>{content.kicker}</Kicker>
-            <h1 className="mt-5 font-display text-[clamp(3.2rem,5vw,4.35rem)] font-bold leading-[.98] tracking-[-.045em]">
+            <h1 className="mt-5 font-display text-[clamp(2rem,5vw,4rem)] font-bold leading-[.98] tracking-[-.045em] text-brand">
               {content.title}
             </h1>
-            <p className="mt-5 max-w-6xl text-[clamp(1.05rem,1.55vw,1.3rem)] leading-[1.75] text-ink-dim">
+            <p className="mt-5 max-w-6xl text-sm leading-[1.75] text-ink-dim">
               {content.introduction}
             </p>
           </Container>
@@ -74,59 +76,42 @@ export function MediaPage({ content }: { content: MediaPageContent }) {
               {content.galleryTitle}
             </h2>
             {content.gallery.length ? (
-              <div className="mt-6 grid grid-cols-1 gap-4 grid-flow-dense sm:grid-cols-2 sm:auto-rows-55 lg:grid-cols-4 lg:auto-rows-45 xl:auto-rows-47.5">
-                {content.gallery.map((item, index) => (
-                  <figure
-                    key={`${item.image}-${index}`}
-                    className={`relative min-h-64 overflow-hidden bg-soft sm:min-h-0 ${item.wide ? "sm:col-span-2" : "sm:col-span-1"} ${item.tall ? "sm:row-span-2" : "sm:row-span-1"}`}
-                  >
-                    <Image
-                      src={item.image}
-                      alt="Native Insight event and field work"
-                      fill
-                      sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition duration-700 hover:scale-[1.02]"
-                    />
-                  </figure>
-                ))}
-              </div>
+              <GalleryReveal className="mt-6">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12">
+                  {content.gallery.map((item, index) => {
+                    const remaining = content.gallery.length - index;
+                    const isLastDesktopRow = remaining <= (galleryRemainder || 4);
+                    const desktopSpan = isLastDesktopRow && galleryRemainder
+                      ? galleryRemainder === 1
+                        ? "lg:col-span-12"
+                        : galleryRemainder === 2
+                          ? "lg:col-span-6"
+                          : "lg:col-span-4"
+                      : "lg:col-span-3";
+                    const isLastOddItem = content.gallery.length % 2 === 1 && index === content.gallery.length - 1;
+
+                    return (
+                      <figure
+                        key={`${item.image}-${index}`}
+                        className={`relative aspect-4/3 overflow-hidden bg-soft ${isLastOddItem ? "sm:col-span-2" : "sm:col-span-1"} ${desktopSpan}`}
+                      >
+                        <Image
+                          src={item.image}
+                          alt="Native Insight event and field work"
+                          fill
+                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                          className="gallery-scroll-image object-cover transition-transform duration-700 hover:scale-[1.025]"
+                        />
+                      </figure>
+                    );
+                  })}
+                </div>
+              </GalleryReveal>
             ) : (
               <p className="mt-6 border border-ink/10 bg-soft p-7 text-ink-dim">
                 Gallery images are being updated.
               </p>
             )}
-          </Container>
-        </section>
-
-        <section className="pb-[clamp(78px,9vw,128px)]">
-          <Container>
-            <div className="grid gap-5 md:grid-cols-3">
-              {content.resources.map((resource) => (
-                <article
-                  key={resource.title}
-                  className="border border-ink/10 bg-soft p-7 md:min-h-44 md:p-8"
-                >
-                  <h3 className="font-display text-xl font-bold tracking-[-.02em]">
-                    {resource.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">
-                    {resource.description}
-                  </p>
-                  {resource.href ? (
-                    <Link
-                      href={resource.href}
-                      className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand transition hover:gap-3"
-                    >
-                      {resource.label} <ArrowRight size={15} weight="bold" />
-                    </Link>
-                  ) : (
-                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand">
-                      {resource.label} <ArrowRight size={15} weight="bold" />
-                    </span>
-                  )}
-                </article>
-              ))}
-            </div>
           </Container>
         </section>
       </main>

@@ -9,11 +9,11 @@ import { Kicker } from "@/components/atoms/kicker";
 
 const heroImages = [
   "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-10.25.01.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-13.34.45.jpeg",
+  // "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-13.34.45.jpeg",
   "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-10.53.47.jpeg",
   "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-10.53.48.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-11.03.30.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-11.03.31.jpeg",
+  // "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-11.03.30.jpeg",
+  // "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-11.03.31.jpeg",
 ];
 const words = ["grow", "transform", "secure"];
 
@@ -59,7 +59,7 @@ export function HomeHero() {
         wide
         className="relative flex min-h-dvh flex-col justify-center pb-16 pt-31 md:pb-24 md:pt-37.5"
       >
-        <div className="relative flex flex-wrap gap-x-7 gap-y-2 border-b border-purple-100/25 pb-5 text-[clamp(.78rem,1.35vw,1.02rem)] text-purple-50 after:absolute after:-bottom-px after:left-0 after:h-0.5 after:w-30 after:bg-linear-to-r after:from-brand after:to-accent">
+        <div className="relative flex flex-wrap gap-x-7 gap-y-2 border-b border-purple-100/25 pb-5 text-[clamp(.78rem,1vw,1.02rem)] text-purple-50 after:absolute after:-bottom-px after:left-0 after:h-0.5 after:w-30 after:bg-linear-to-r after:from-brand after:to-accent">
           {[
             ["Local", "solution"],
             ["Pan-African", "perspective"],
@@ -76,7 +76,7 @@ export function HomeHero() {
             </span>
           ))}
         </div>
-        <h1 className="mt-8 max-w-245 font-display text-[clamp(2.8rem,7vw,5.65rem)] font-bold leading-[1.08] tracking-[-.045em] md:mt-10">
+        <h1 className="my-8 max-w-85 font-display text-[clamp(2rem,3.5vw,5rem)] font-bold leading-[1.08] tracking-[-.045em] md:mt-10 lg:max-w-125 xl:max-w-145 xl:text-[clamp(2rem,4vw,5rem)]">
           We help African businesses{" "}
           <span
             key={words[word]}
@@ -89,7 +89,7 @@ export function HomeHero() {
         <Kicker light>Who we are</Kicker>
         <div className="mt-1 grid items-start gap-8 lg:grid-cols-[1.15fr_.85fr] lg:gap-14">
           <div>
-            <p className="max-w-[52ch] text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.65] text-purple-50/90">
+            <p className="max-w-[52ch] text-[clamp(1rem,1vw,1.25rem)] leading-[1.65] text-purple-50/90">
               Native Insight combines agile approach with research tools to
               reposition businesses for growth, provide market insights to
               investors, and evaluate impact to government and development
@@ -166,7 +166,7 @@ export function ServicesAccordion() {
             <span className="text-xs font-bold tracking-wider text-brand">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <span className="flex-1 font-display text-[clamp(1.3rem,2.5vw,1.9rem)] font-semibold leading-tight">
+            <span className="flex-1 font-display text-[clamp(1rem,2vw,1.4rem)] font-semibold leading-tight">
               {title}
             </span>
             <span
@@ -179,7 +179,7 @@ export function ServicesAccordion() {
             className={`grid transition-[grid-template-rows] duration-300 ${open === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
           >
             <div className="overflow-hidden">
-              <p className="max-w-[66ch] px-5 pb-7 text-base leading-7 text-ink-dim">
+              <p className="max-w-[66ch] px-5 pb-7 text-sm leading-7 text-ink-dim">
                 {copy}
               </p>
             </div>

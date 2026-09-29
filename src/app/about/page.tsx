@@ -35,11 +35,11 @@ function SectionHeading({
 }) {
   return (
     <div>
-      <p className="flex items-center gap-3 text-[13px] font-extrabold tracking-[.01em] text-ink uppercase">
-        <span className="h-px w-6.25 bg-accent" aria-hidden="true" />
+      <p className="flex items-center gap-3 text-[13px] font-extrabold tracking-[.01em] text-brand uppercase">
+        <span className="h-px w-6.25 bg-brand" aria-hidden="true" />
         {eyebrow}
       </p>
-      <h2 className="mt-5 font-display text-[clamp(2rem,4.6vw,3.68rem)] font-bold leading-[1.02] tracking-[-.04em]">{children}</h2>
+      <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.02] tracking-[-.04em] text-brand">{children}</h2>
     </div>
   );
 }
@@ -56,16 +56,16 @@ export default async function AboutPage() {
         <section className="pb-[clamp(54px,7vw,92px)] pt-42.5 lg:pt-44">
           <Container>
             <div className="mt-16 max-w-190 lg:mt-8">
-              <p className="flex items-center gap-3 text-[13px] font-extrabold tracking-[.01em] text-ink uppercase">
-                <span className="h-px w-6.25 bg-accent" aria-hidden="true" />
+              <p className="flex items-center gap-3 text-[13px] font-extrabold tracking-[.01em] text-brand uppercase">
+                <span className="h-px w-6.25 bg-brand" aria-hidden="true" />
                 {content.eyebrow}
               </p>
-              <h1 className="mt-5 font-display text-[clamp(2.306rem,5vw,4.55rem)] font-bold leading-[.96] tracking-[-.055em]">
+              <h1 className="mt-5 font-display text-[clamp(2rem,5vw,4rem)] font-bold leading-[.96] tracking-[-.055em] text-brand">
                 {content.title}
               </h1>
             </div>
-            <div className="mt-[clamp(64px,9vw,112px)]">
-              <div className="space-y-5 text-[clamp(1rem,1.35vw,1.18rem)] leading-[1.75] text-ink-dim">
+            <div className="mt-[clamp(3rem,5vw,3.5rem)]">
+              <div className="space-y-5 text-sm leading-[1.75] text-ink-dim">
                 {content.introduction.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -92,8 +92,8 @@ export default async function AboutPage() {
                   <span className="grid h-12 w-12 place-items-center bg-[#ebe6f8] text-xl leading-none text-[#3b0ba0]" aria-hidden="true">
                     {commitmentIcons[index]}
                   </span>
-                  <h3 className="mt-6 mb-3 font-display text-[23px] font-bold leading-[1.02] tracking-[-.025em]">{item.title}</h3>
-                  <p className="text-[15px] leading-[1.55] text-muted">{item.copy}</p>
+                  <h3 className="mt-6 mb-3 font-display text-[23px] font-bold leading-[1.02] tracking-tight">{item.title}</h3>
+                  <p className="text-sm leading-[1.55] text-muted">{item.copy}</p>
                 </article>
               ))}
             </div>
@@ -101,7 +101,7 @@ export default async function AboutPage() {
         </section>
 
         <section className="bg-soft pb-[clamp(37px,6vw,77px)]">
-          <Container className="space-y-5 pt-[clamp(37px,6vw,77px)]">
+          <Container className="space-y-5 pt-[clamp(37px,6vw,77px)] grid grid-cols-1 gap-7 md:grid-cols-2 md:gap-14">
             {[
               { label: "Our Mission", ...content.mission },
               { label: "Our Vision", ...content.vision },
@@ -111,8 +111,8 @@ export default async function AboutPage() {
                   <span className="h-px w-6.25 bg-accent" aria-hidden="true" />
                   {item.label}
                 </p>
-                <h2 className="font-display text-[clamp(2rem,4.6vw,3.68rem)] font-bold leading-[1.02] tracking-[-.04em]">{item.title}</h2>
-                <p className="text-[17px] leading-[1.55] text-ink-dim">{item.copy}</p>
+                <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.02] tracking-[-.04em]">{item.title}</h2>
+                <p className="text-sm leading-[1.55] text-ink-dim">{item.copy}</p>
               </article>
             ))}
           </Container>
@@ -158,7 +158,7 @@ export default async function AboutPage() {
           </Container>
         </section>
 
-        <section className="py-[clamp(37px,6vw,77px)] lg:pt-45.5">
+        <section className="py-[clamp(2rem,6vw,4.5rem)] lg:pt-45.5">
           <Container>
             <SectionHeading eyebrow="The journey">
               A track record across Africa.
@@ -169,7 +169,7 @@ export default async function AboutPage() {
                   <p className="font-display text-[28px] leading-[1.55] text-brand md:text-3xl">{item.year}</p>
                   <div>
                     <h3 className="mb-2 font-display text-[21px] font-bold leading-[1.02]">{item.title}</h3>
-                    <p className="text-[15px] leading-[1.55] text-muted">{item.copy}</p>
+                    <p className="text-sm leading-[1.55] text-muted">{item.copy}</p>
                   </div>
                 </article>
               ))}
