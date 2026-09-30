@@ -88,7 +88,7 @@ button, input, textarea { font: inherit; }
 .team-crumb { margin-bottom: 23px; color: #4c4564; font-size: 14px; }
 .team-hero .kicker, .team-leadership .kicker { color: #32079c; }
 .team-hero h1 { margin-top: 15px; max-width: 15ch; color: #32079c; font-family: var(--font-display); font-size: clamp(40px, 6vw, 64px); font-weight: 700; line-height: .98; letter-spacing: -.04em; }
-.team-intro { margin-top: 17px; max-width: 92ch; color: #4c4564; font-size: 1rem; line-height: 1.55; }
+.team-intro { margin-top: 17px; max-width: 36rem; color: #4c4564; font-size: 1rem; line-height: 1.55; }
 .team-map-section { padding: clamp(36px, 6vw, 76.8px) 0; }
 .team-map-wrap { display: grid; grid-template-columns: 1.15fr .85fr; align-items: stretch; gap: clamp(24px, 3vw, 48px); }
 .team-map-stage { position: relative; min-height: 480px; overflow: hidden; border: 1px solid rgb(25 19 46 / .12); background: radial-gradient(80% 70% at 50% 14%, rgb(50 7 156 / .08), transparent 70%), #f6f4fc; padding: 8px; }

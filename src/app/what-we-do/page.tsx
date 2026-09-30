@@ -80,7 +80,7 @@ export default function WhatWeDoPage() {
               We help African businesses grow, transform, and secure Africa’s
               digital future
             </h1>
-            <p className="mt-5.5 max-w-[94ch] text-sm leading-[1.55] text-ink-dim">
+            <p className="mt-5.5 max-w-xl text-sm leading-[1.55] text-ink-dim">
               We combine an agile approach with rigorous research tools to grow
               businesses, give investors market insight, and evaluate impact for
               governments and development partners, problem-specific,

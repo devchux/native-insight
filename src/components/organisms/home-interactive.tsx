@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/atoms/container";
 import { Kicker } from "@/components/atoms/kicker";
 
@@ -17,6 +17,63 @@ const heroImages = [
   // "https://cms.nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-11.03.31.jpeg",
 ];
 const words = ["grow", "transform", "secure"];
+
+export function CountUp({
+  value,
+  suffix = "",
+}: {
+  value: number;
+  suffix?: string;
+}) {
+  const elementRef = useRef<HTMLSpanElement>(null);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const animationFrame = requestAnimationFrame(() => setCount(value));
+      return () => cancelAnimationFrame(animationFrame);
+    }
+
+    let animationFrame = 0;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+
+        const startedAt = performance.now();
+        const duration = 1400;
+        const animate = (now: number) => {
+          const progress = Math.min((now - startedAt) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          setCount(Math.round(value * eased));
+
+          if (progress < 1) animationFrame = requestAnimationFrame(animate);
+        };
+
+        animationFrame = requestAnimationFrame(animate);
+        observer.disconnect();
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(element);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(animationFrame);
+    };
+  }, [value]);
+
+  return (
+    <span ref={elementRef} aria-label={`${value}${suffix}`}>
+      <span aria-hidden="true">
+        {count}
+        {suffix}
+      </span>
+    </span>
+  );
+}
 
 export function HomeHero() {
   const [slide, setSlide] = useState(0);

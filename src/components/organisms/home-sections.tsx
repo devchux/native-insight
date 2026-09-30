@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/atoms/container";
 import { Kicker } from "@/components/atoms/kicker";
-import { ServicesAccordion } from "@/components/organisms/home-interactive";
+import {
+  CountUp,
+  ServicesAccordion,
+} from "@/components/organisms/home-interactive";
 import { decodeHtml, featuredImage, postTerms } from "@/lib/content";
 import type { WpPost } from "@/types/wordpress";
 
@@ -30,31 +33,38 @@ export function ExpertiseStrip() {
 
 export function Stats() {
   const stats = [
-    [
-      "12+",
-      "Research",
-      "Years of extensive research in market analysis & insights",
-    ],
-    [
-      "6+",
-      "Track record",
-      "Years of delivering impactful results beyond client expectations",
-    ],
-    ["48+", "Our people", "Strong team and consultants across Africa"],
+    {
+      value: 12,
+      suffix: "+",
+      label: "Research",
+      copy: "Years of extensive research in market analysis & insights",
+    },
+    {
+      value: 6,
+      suffix: "+",
+      label: "Track record",
+      copy: "Years of delivering impactful results beyond client expectations",
+    },
+    {
+      value: 48,
+      suffix: "+",
+      label: "Our people",
+      copy: "Strong team and consultants across Africa",
+    },
   ];
   return (
     <Container
       as="section"
       className="grid py-[clamp(48px,6vw,88px)] md:grid-cols-3"
     >
-      {stats.map(([number, label, copy], index) => (
+      {stats.map(({ value, suffix, label, copy }, index) => (
         <div
           key={label}
           className={`py-7 md:px-9 md:first:pl-0 ${index < stats.length - 1 ? "border-b border-ink/15 md:border-b-0 md:border-r" : ""}`}
         >
           <p className="text-sm font-semibold uppercase text-brand">{label}</p>
           <p className="mt-3 font-display text-[clamp(3.25rem,7vw,5.75rem)] leading-none tracking-[-.04em]">
-            {number}
+            <CountUp value={value} suffix={suffix} />
           </p>
           <p className="mt-4 max-w-[26ch] text-sm leading-6 text-ink-dim">
             {copy}

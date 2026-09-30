@@ -115,10 +115,10 @@ export function InsightsPage({ content, posts, categories, activeCategory }: Ins
         <section className="pb-[clamp(54px,7vw,94px)] pt-35 md:pt-50">
           <Container wide>
             <Kicker>{content.kicker}</Kicker>
-            <h1 className="mt-5 max-w-5xl font-display text-[clamp(3.2rem,5vw,4.35rem)] font-bold leading-[.98] tracking-[-.045em] text-brand">
+            <h1 className="mt-5 max-w-xl font-display text-[clamp(3.2rem,5vw,4.35rem)] font-bold leading-[.98] tracking-[-.045em] text-brand">
               {content.title}
             </h1>
-            <p className="mt-5 max-w-6xl text-[clamp(1.05rem,1.55vw,1.3rem)] leading-[1.75] text-ink-dim">
+            <p className="mt-5 max-w-xl text-[clamp(1.05rem,1.55vw,1.3rem)] leading-[1.75] text-ink-dim">
               {content.introduction}
             </p>
           </Container>

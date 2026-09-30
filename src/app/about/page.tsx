@@ -64,8 +64,8 @@ export default async function AboutPage() {
                 {content.title}
               </h1>
             </div>
-            <div className="mt-[clamp(3rem,5vw,3.5rem)]">
-              <div className="space-y-5 text-sm leading-[1.75] text-ink-dim">
+            <div className="mt-[clamp(3rem,5vw,3.5rem)] max-w-xl">
+              <div className="space-y-5  text-sm leading-[1.75] text-ink-dim">
                 {content.introduction.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
