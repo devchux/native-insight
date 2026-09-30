@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "nativeinsightng.com",
+        hostname: "cms.nativeinsightng.com",
         pathname: "/wp-content/**",
       },
     ],

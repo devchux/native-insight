@@ -63,7 +63,7 @@ const fallback: CareersPageContent = {
   introduction:
     "We're building the future of African digital economy insights and need sharp minds to help us get there.",
   image:
-    "https://nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.18-2048x1152.jpeg",
+    "https://cms.nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.18-2048x1152.jpeg",
   benefitsKicker: "Why Native Insight",
   benefitsTitle: "More than a job.",
   benefits: [],

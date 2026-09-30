@@ -6,7 +6,7 @@ const controlClass =
 export function ContactForm({ content }: { content: ContactPageContent }) {
   return (
     <form
-      action="https://nativeinsightng.com/contact/"
+      action="https://cms.nativeinsightng.com/contact/"
       method="post"
       className="grid gap-3.5"
     >

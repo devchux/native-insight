@@ -160,7 +160,7 @@ export function Partners() {
               >
                 <div className="relative h-20 w-44">
                   <Image
-                    src={`https://nativeinsightng.com/wp-content/uploads/2026/06/${file}`}
+                    src={`https://cms.nativeinsightng.com/wp-content/uploads/2026/06/${file}`}
                     alt={index < logos.length ? name : ""}
                     fill
                     sizes="176px"

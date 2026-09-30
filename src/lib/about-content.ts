@@ -19,13 +19,13 @@ export type AboutContent = {
 };
 
 const gallery = [
-  "https://nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-11.03.33-2.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.27.31.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.15-1.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.15.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.16.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.17.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.18.jpeg",
+  "https://cms.nativeinsightng.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-10-at-11.03.33-2.jpeg",
+  "https://cms.nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.27.31.jpeg",
+  "https://cms.nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.15-1.jpeg",
+  "https://cms.nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.15.jpeg",
+  "https://cms.nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.16.jpeg",
+  "https://cms.nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.17.jpeg",
+  "https://cms.nativeinsightng.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-17-at-14.50.18.jpeg",
 ];
 
 export const fallbackAboutContent: AboutContent = {

@@ -25,7 +25,7 @@ const displayFont = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nativeinsightng.com"),
+  metadataBase: new URL("https://cms.nativeinsightng.com"),
   title: { default: "Native Insight", template: "%s - Native Insight" },
   description: "Local solution. Pan-African perspective. Global participation.",
 };

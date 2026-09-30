@@ -1,6 +1,6 @@
 import type { WpCollection, WpPage, WpPost, WpTerm } from "@/types/wordpress";
 
-const WORDPRESS_URL = (process.env.WORDPRESS_URL ?? "https://nativeinsightng.com").replace(/\/$/, "");
+const WORDPRESS_URL = (process.env.WORDPRESS_URL ?? "https://cms.nativeinsightng.com").replace(/\/$/, "");
 const REVALIDATE_SECONDS = Number(process.env.WORDPRESS_REVALIDATE_SECONDS ?? 300);
 
 type QueryValue = string | number | boolean | undefined;

@@ -185,7 +185,7 @@ export function CareersPage({ content }: { content: CareersPageContent }) {
                 </div>
               </div>
               <form
-                action="https://nativeinsightng.com/careers/"
+                action="https://cms.nativeinsightng.com/careers/"
                 method="post"
                 encType="multipart/form-data"
                 className="grid content-start gap-x-3 gap-y-4 md:grid-cols-2"

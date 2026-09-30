@@ -8,8 +8,8 @@ import { SiteHeader } from "@/components/organisms/site-header";
 import type { AcademyPageContent } from "@/lib/wordpress/academy-page";
 
 const academyImages = [
-  "https://nativeinsightng.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-28-at-18.35.28.jpeg",
-  "https://nativeinsightng.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-28-at-18.35.28-1.jpeg",
+  "https://cms.nativeinsightng.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-28-at-18.35.28.jpeg",
+  "https://cms.nativeinsightng.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-28-at-18.35.28-1.jpeg",
 ];
 
 export function AcademyPage({ content }: { content: AcademyPageContent }) {
@@ -67,8 +67,8 @@ export function AcademyPage({ content }: { content: AcademyPageContent }) {
                 <p className="mt-6 text-[clamp(1rem,1.35vw,1.18rem)] leading-8 text-ink-dim">
                   {content.purposeIntroduction}
                 </p>
-                <a href="mailto:consult@nativeinsightng.com" className="mt-8 inline-flex items-center gap-2 text-base font-bold text-brand underline decoration-brand/30 underline-offset-6 transition hover:decoration-brand">
-                  For bespoke sessions, contact consult@nativeinsightng.com
+                <a href="mailto:consult@cms.nativeinsightng.com" className="mt-8 inline-flex items-center gap-2 text-base font-bold text-brand underline decoration-brand/30 underline-offset-6 transition hover:decoration-brand">
+                  For bespoke sessions, contact consult@cms.nativeinsightng.com
                   <ArrowRight size={17} weight="bold" />
                 </a>
               </div>
@@ -98,7 +98,7 @@ export function AcademyPage({ content }: { content: AcademyPageContent }) {
                       </li>
                     ))}
                   </ul>
-                  <a href="mailto:consult@nativeinsightng.com" className="mt-auto inline-flex w-fit items-center gap-2 pt-8 text-sm font-bold text-brand transition hover:gap-3">
+                  <a href="mailto:consult@cms.nativeinsightng.com" className="mt-auto inline-flex w-fit items-center gap-2 pt-8 text-sm font-bold text-brand transition hover:gap-3">
                     Details <ArrowRight size={15} weight="bold" />
                   </a>
                 </article>

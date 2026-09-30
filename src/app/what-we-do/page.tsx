@@ -92,7 +92,7 @@ export default function WhatWeDoPage() {
         <Container wide as="section" className="pb-[clamp(44px,6vw,84px)]">
           <div className="relative aspect-3/2 overflow-hidden bg-soft md:aspect-16/7">
             <Image
-              src="https://nativeinsightng.com/wp-content/uploads/2026/09/fb4cf847674c202a9434985307e7abd7-xxlarge.jpeg"
+              src="https://cms.nativeinsightng.com/wp-content/uploads/2026/09/fb4cf847674c202a9434985307e7abd7-xxlarge.jpeg"
               alt="African performers engaging with an attendee at a professional event"
               fill
               priority
