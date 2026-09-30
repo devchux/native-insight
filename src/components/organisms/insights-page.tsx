@@ -179,7 +179,7 @@ export function InsightsPage({ content, posts, categories, activeCategory }: Ins
               </div>
               <Link
                 href="/reports"
-                className="inline-flex min-h-12 w-fit items-center gap-3 bg-white px-6 py-3.5 text-sm font-bold text-brand transition hover:bg-surface"
+                className="inline-flex min-h-12 w-fit items-center gap-3 bg-white px-6 py-3.5 text-sm font-bold text-brand! transition hover:bg-surface"
               >
                 {content.reportLabel} <ArrowRight size={16} weight="bold" />
               </Link>
