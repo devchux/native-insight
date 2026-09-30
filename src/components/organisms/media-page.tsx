@@ -43,7 +43,8 @@ export function MediaPage({ content }: { content: MediaPageContent }) {
                       src={feature.image}
                       alt=""
                       fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
+                      quality={90}
+                      sizes="(min-width: 1280px) 33vw, (min-width: 768px) 34vw, 100vw"
                       className="object-cover transition duration-700 group-hover:scale-[1.025]"
                     />
                     <span className="absolute inset-0 bg-linear-to-t from-deep/90 via-deep/10 to-black/15" />
@@ -77,7 +78,7 @@ export function MediaPage({ content }: { content: MediaPageContent }) {
             </h2>
             {content.gallery.length ? (
               <GalleryReveal className="mt-6">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12">
+                <div className="grid grid-cols-2 gap-1.5 sm:gap-2 lg:grid-cols-12 lg:gap-3">
                   {content.gallery.map((item, index) => {
                     const remaining = content.gallery.length - index;
                     const isLastDesktopRow = remaining <= (galleryRemainder || 4);
@@ -88,18 +89,17 @@ export function MediaPage({ content }: { content: MediaPageContent }) {
                           ? "lg:col-span-6"
                           : "lg:col-span-4"
                       : "lg:col-span-3";
-                    const isLastOddItem = content.gallery.length % 2 === 1 && index === content.gallery.length - 1;
-
                     return (
                       <figure
                         key={`${item.image}-${index}`}
-                        className={`relative aspect-4/3 overflow-hidden bg-soft ${isLastOddItem ? "sm:col-span-2" : "sm:col-span-1"} ${desktopSpan}`}
+                        className={`relative aspect-4/3 overflow-hidden bg-soft ${desktopSpan}`}
                       >
                         <Image
                           src={item.image}
                           alt="Native Insight event and field work"
                           fill
-                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                          quality={90}
+                          sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 50vw"
                           className="gallery-scroll-image object-cover transition-transform duration-700 hover:scale-[1.025]"
                         />
                       </figure>

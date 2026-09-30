@@ -68,6 +68,13 @@ function matchText(html: string, pattern: RegExp, value: string) {
   return match ? decodeHtml(match) : value;
 }
 
+function fullSizeWordPressImage(url: string) {
+  return decodeHtml(url.trim().replace(/^['"]|['"]$/g, "")).replace(
+    /-(?:\d{2,4})x(?:\d{2,4})(?=\.(?:jpe?g|png|webp)(?:\?|$))/i,
+    "",
+  );
+}
+
 export async function getMediaPageContent(): Promise<MediaPageContent> {
   const page = await getPage("media");
   const html = page?.content?.rendered;
@@ -80,7 +87,7 @@ export async function getMediaPageContent(): Promise<MediaPageContent> {
     ),
     ([, href, image, outlet, title]) => ({
       href,
-      image,
+      image: fullSizeWordPressImage(image),
       outlet: decodeHtml(outlet),
       title: decodeHtml(title),
     }),
@@ -89,7 +96,7 @@ export async function getMediaPageContent(): Promise<MediaPageContent> {
   const gallery = Array.from(
     html.matchAll(/<div class="ph([^"]*)" style="background:url\(([^)]+)\)/g),
     ([, classes, image]) => ({
-      image,
+      image: fullSizeWordPressImage(image),
       wide: classes.split(/\s+/).includes("wide"),
       tall: classes.split(/\s+/).includes("tall2"),
     }),
