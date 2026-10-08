@@ -16,7 +16,7 @@ const fallback: ReportsPageContent = {
   title: "Our Reports",
   introduction:
     "Our reports synthesizes the morass of market information to demystify sectors for investors and stakeholders.",
-  flagshipLabel: "Flagship report",
+  flagshipLabel: "Latest report",
   readLabel: "Read the report",
   downloadLabel: "Download PDF",
 };
