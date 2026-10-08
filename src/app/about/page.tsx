@@ -65,7 +65,7 @@ export default async function AboutPage() {
               </h1>
             </div>
             <div className="mt-[clamp(3rem,5vw,3.5rem)] max-w-xl">
-              <div className="space-y-5  text-sm leading-[1.75] text-ink-dim">
+              <div className="space-y-5  text-base leading-[1.75] text-ink-dim">
                 {content.introduction.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -93,7 +93,7 @@ export default async function AboutPage() {
                     {commitmentIcons[index]}
                   </span>
                   <h3 className="mt-6 mb-3 font-display text-[23px] font-bold leading-[1.02] tracking-tight">{item.title}</h3>
-                  <p className="text-sm leading-[1.55] text-muted">{item.copy}</p>
+                  <p className="text-base leading-[1.55] text-muted">{item.copy}</p>
                 </article>
               ))}
             </div>
@@ -112,7 +112,7 @@ export default async function AboutPage() {
                   {item.label}
                 </p>
                 <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.02] tracking-[-.04em]">{item.title}</h2>
-                <p className="text-sm leading-[1.55] text-ink-dim">{item.copy}</p>
+                <p className="text-base leading-[1.55] text-ink-dim">{item.copy}</p>
               </article>
             ))}
           </Container>
@@ -126,12 +126,12 @@ export default async function AboutPage() {
             <div className="mt-5 grid grid-cols-1 border-t border-ink/10 md:grid-cols-2">
               {content.values.map((item, index) => (
                 <article key={item.title} className="grid grid-cols-[44px_1fr] gap-4 border-b border-ink/10 py-7 md:min-h-42 md:grid-cols-[64px_1fr] md:gap-5 md:py-8.5 md:pr-10 md:even:border-l md:even:pl-10 md:nth-[3]:min-h-47.75 md:nth-[4]:min-h-47.75">
-                  <p className="text-sm text-brand">
+                  <p className="text-base text-brand">
                     {String(index + 1).padStart(2, "0")}
                   </p>
                   <div>
                     <h3 className="mb-2 font-display text-[21px] font-bold leading-[1.02]">{item.title}</h3>
-                    <p className="text-sm leading-[1.55] text-muted">{item.copy}</p>
+                    <p className="text-base leading-[1.55] text-muted">{item.copy}</p>
                   </div>
                 </article>
               ))}
@@ -151,7 +151,7 @@ export default async function AboutPage() {
                     {differentiatorIcons[index]}
                   </span>
                   <h3 className="mt-4.5 mb-2 font-display text-lg font-bold leading-[1.02]">{item.title}</h3>
-                  <p className="text-sm leading-[1.55] text-muted">{item.copy}</p>
+                  <p className="text-base leading-[1.55] text-muted">{item.copy}</p>
                 </article>
               ))}
             </div>
@@ -169,7 +169,7 @@ export default async function AboutPage() {
                   <p className="font-display text-[28px] leading-[1.55] text-brand md:text-3xl">{item.year}</p>
                   <div>
                     <h3 className="mb-2 font-display text-[21px] font-bold leading-[1.02]">{item.title}</h3>
-                    <p className="text-sm leading-[1.55] text-muted">{item.copy}</p>
+                    <p className="text-base leading-[1.55] text-muted">{item.copy}</p>
                   </div>
                 </article>
               ))}

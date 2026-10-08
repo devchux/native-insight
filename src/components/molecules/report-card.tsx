@@ -29,7 +29,7 @@ export function ReportCard({ report }: { report: WpPost }) {
           <Link href={reportHref(report)} className="transition hover:text-accent">{title}</Link>
         </h2>
         <p className="mt-5 text-[11px] font-semibold uppercase tracking-[.15em] text-muted">PDF · Report</p>
-        <Link href={reportHref(report)} className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-bold text-brand transition hover:gap-3">
+        <Link href={reportHref(report)} className="mt-6 inline-flex w-fit items-center gap-2 text-base font-bold text-brand transition hover:gap-3">
           Read report <ArrowRight size={15} weight="bold" />
         </Link>
       </div>

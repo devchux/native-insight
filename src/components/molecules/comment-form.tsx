@@ -25,13 +25,13 @@ export function CommentForm({ postId }: { postId: number }) {
   return (
     <form onSubmit={submit} className="mt-8 grid gap-5" aria-describedby="comment-status">
       <div className="grid gap-5 md:grid-cols-2">
-        <label className="grid gap-2 text-sm font-semibold">Name<input required name="name" autoComplete="name" className="min-h-12 border border-ink/20 bg-white px-4 outline-none focus:border-brand" /></label>
-        <label className="grid gap-2 text-sm font-semibold">Email<input required type="email" name="email" autoComplete="email" className="min-h-12 border border-ink/20 bg-white px-4 outline-none focus:border-brand" /></label>
+        <label className="grid gap-2 text-base font-semibold">Name<input required name="name" autoComplete="name" className="min-h-12 border border-ink/20 bg-white px-4 outline-none focus:border-brand" /></label>
+        <label className="grid gap-2 text-base font-semibold">Email<input required type="email" name="email" autoComplete="email" className="min-h-12 border border-ink/20 bg-white px-4 outline-none focus:border-brand" /></label>
       </div>
-      <label className="grid gap-2 text-sm font-semibold">Comment<textarea required name="content" rows={6} className="border border-ink/20 bg-white p-4 outline-none focus:border-brand" /></label>
-      <p className="text-sm text-muted">Your email address will not be published. Comments may be held for moderation.</p>
-      <button disabled={status === "sending"} className="w-fit rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white transition hover:bg-brand-deep disabled:opacity-60">{status === "sending" ? "Submitting..." : "Post comment"}</button>
-      <p id="comment-status" aria-live="polite" className={`text-sm ${status === "error" ? "text-red-700" : "text-brand"}`}>{message}</p>
+      <label className="grid gap-2 text-base font-semibold">Comment<textarea required name="content" rows={6} className="border border-ink/20 bg-white p-4 outline-none focus:border-brand" /></label>
+      <p className="text-base text-muted">Your email address will not be published. Comments may be held for moderation.</p>
+      <button disabled={status === "sending"} className="w-fit rounded-full bg-brand px-7 py-3.5 text-base font-bold text-white transition hover:bg-brand-deep disabled:opacity-60">{status === "sending" ? "Submitting..." : "Post comment"}</button>
+      <p id="comment-status" aria-live="polite" className={`text-base ${status === "error" ? "text-red-700" : "text-brand"}`}>{message}</p>
     </form>
   );
 }

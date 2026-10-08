@@ -51,7 +51,7 @@ function RelatedCard({ post }: { post: WpPost }) {
         </h3>
         <Link
           href={`/${post.slug}`}
-          className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-bold text-brand transition hover:gap-3"
+          className="mt-6 inline-flex w-fit items-center gap-2 text-base font-bold text-brand transition hover:gap-3"
         >
           Read article <ArrowRight size={15} weight="bold" />
         </Link>
@@ -79,7 +79,7 @@ export function ArticleDetailPage({
           <Container wide>
             <Link
               href="/insights"
-              className="text-sm text-ink-dim transition hover:text-brand"
+              className="text-base text-ink-dim transition hover:text-brand"
             >
               Insights
             </Link>

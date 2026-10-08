@@ -160,13 +160,13 @@ export function HomeHero() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/what-we-do"
-                className="inline-flex items-center gap-3 bg-brand px-7 py-4 text-sm font-bold transition hover:bg-brand-deep"
+                className="inline-flex items-center gap-3 bg-brand px-7 py-4 text-base font-bold transition hover:bg-brand-deep"
               >
                 What we do <ArrowRight size={18} weight="bold" />
               </Link>
               <Link
                 href="/our-team"
-                className="inline-flex items-center border border-white/45 px-7 py-4 text-sm font-bold transition hover:border-white hover:bg-white/10"
+                className="inline-flex items-center border border-white/45 px-7 py-4 text-base font-bold transition hover:border-white hover:bg-white/10"
               >
                 Meet the team
               </Link>
@@ -237,7 +237,7 @@ export function ServicesAccordion() {
             className={`grid transition-[grid-template-rows] duration-300 ${open === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
           >
             <div className="overflow-hidden">
-              <p className="max-w-[66ch] px-5 pb-7 text-sm leading-7 text-ink-dim">
+              <p className="max-w-[66ch] px-5 pb-7 text-base leading-7 text-ink-dim">
                 {copy}
               </p>
             </div>

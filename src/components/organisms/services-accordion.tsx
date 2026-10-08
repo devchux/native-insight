@@ -48,7 +48,7 @@ export function ServicesAccordion({ items }: { items: readonly Service[] }) {
               <div
                 className={`min-h-0 overflow-hidden transition-[padding] duration-250 ease-[cubic-bezier(.22,.61,.36,1)] ${open ? "px-3.5 pt-0.5 pb-5.5 min-[601px]:px-5.5 min-[601px]:pb-7" : "px-1 min-[601px]:px-1.5"}`}
               >
-                <p className="mb-3.5 max-w-[66ch] text-sm leading-[1.55] text-ink-dim min-[601px]:text-sm">
+                <p className="mb-3.5 max-w-[66ch] text-base leading-[1.55] text-ink-dim min-[601px]:text-base">
                   {item.copy}
                 </p>
                 {item.tags.length ? (

@@ -72,7 +72,7 @@ export function CareersPage({ content }: { content: CareersPageContent }) {
             <h1 className="mt-5 font-display text-[clamp(2rem,5vw,4rem)] font-bold leading-[.98] tracking-[-.045em] text-brand">
               {content.title}
             </h1>
-            <p className="mt-5 max-w-6xl text-sm leading-[1.75] text-ink-dim">
+            <p className="mt-5 max-w-6xl text-base leading-[1.75] text-ink-dim">
               {content.introduction}
             </p>
           </Container>
@@ -109,7 +109,7 @@ export function CareersPage({ content }: { content: CareersPageContent }) {
                   <h3 className="mt-5 font-display text-lg font-bold tracking-[-.02em]">
                     {benefit.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">
+                  <p className="mt-2 text-base leading-6 text-muted">
                     {benefit.description}
                   </p>
                 </article>
@@ -147,7 +147,7 @@ export function CareersPage({ content }: { content: CareersPageContent }) {
                   </p>
                   <a
                     href={track.href}
-                    className="mt-6 inline-flex w-fit items-center gap-3 border border-ink/20 px-6 py-4 text-sm font-bold transition hover:border-brand hover:text-brand active:translate-y-px"
+                    className="mt-6 inline-flex w-fit items-center gap-3 border border-ink/20 px-6 py-4 text-base font-bold transition hover:border-brand hover:text-brand active:translate-y-px"
                   >
                     Apply <ArrowRight size={16} weight="bold" />
                   </a>
@@ -177,7 +177,7 @@ export function CareersPage({ content }: { content: CareersPageContent }) {
                       <h3 className="font-display text-lg font-bold">
                         {note.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-6 text-muted">
+                      <p className="mt-2 text-base leading-6 text-muted">
                         {note.description}
                       </p>
                     </article>

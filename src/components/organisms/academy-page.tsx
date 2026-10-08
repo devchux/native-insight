@@ -19,7 +19,7 @@ export function AcademyPage({ content }: { content: AcademyPageContent }) {
       <main className="bg-white text-ink">
         <section className="pb-[clamp(62px,8vw,108px)] pt-35 md:pt-50">
           <Container wide>
-            <nav aria-label="Breadcrumb" className="mb-7 text-sm text-ink-dim">
+            <nav aria-label="Breadcrumb" className="mb-7 text-base text-ink-dim">
               <Link href="/" className="transition hover:text-brand">Home</Link>
               <span className="mx-2.5 text-muted">/</span>
               <span>Academy</span>
@@ -90,7 +90,7 @@ export function AcademyPage({ content }: { content: AcademyPageContent }) {
                     {course.title}
                   </h3>
                   <p className="mt-5 text-[15px] leading-7 text-ink-dim">{course.description}</p>
-                  <ul className="mt-7 space-y-3 border-t border-ink/10 pt-6 text-sm text-ink-dim">
+                  <ul className="mt-7 space-y-3 border-t border-ink/10 pt-6 text-base text-ink-dim">
                     {course.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-3">
                         <Check size={15} weight="bold" className="shrink-0 text-brand" />
@@ -98,7 +98,7 @@ export function AcademyPage({ content }: { content: AcademyPageContent }) {
                       </li>
                     ))}
                   </ul>
-                  <a href="mailto:consult@cms.nativeinsightng.com" className="mt-auto inline-flex w-fit items-center gap-2 pt-8 text-sm font-bold text-brand transition hover:gap-3">
+                  <a href="mailto:consult@cms.nativeinsightng.com" className="mt-auto inline-flex w-fit items-center gap-2 pt-8 text-base font-bold text-brand transition hover:gap-3">
                     Details <ArrowRight size={15} weight="bold" />
                   </a>
                 </article>
@@ -113,7 +113,7 @@ export function AcademyPage({ content }: { content: AcademyPageContent }) {
               {content.stats.map((stat, index) => (
                 <div key={stat.label} className={`p-7 md:p-9 ${index ? "border-t border-ink/10 sm:border-l sm:border-t-0" : ""}`}>
                   <p className="font-display text-[clamp(2.5rem,4vw,4rem)] font-bold leading-none tracking-[-.04em] text-brand">{stat.value}</p>
-                  <p className="mt-3 max-w-55 text-sm leading-6 text-ink-dim">{stat.label}</p>
+                  <p className="mt-3 max-w-55 text-base leading-6 text-ink-dim">{stat.label}</p>
                 </div>
               ))}
             </div>

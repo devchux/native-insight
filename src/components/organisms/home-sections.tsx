@@ -62,11 +62,11 @@ export function Stats() {
           key={label}
           className={`py-7 md:px-9 md:first:pl-0 ${index < stats.length - 1 ? "border-b border-ink/15 md:border-b-0 md:border-r" : ""}`}
         >
-          <p className="text-sm font-semibold uppercase text-brand">{label}</p>
+          <p className="text-base font-semibold uppercase text-brand">{label}</p>
           <p className="mt-3 font-display text-[clamp(3.25rem,7vw,5.75rem)] leading-none tracking-[-.04em]">
             <CountUp value={value} suffix={suffix} />
           </p>
-          <p className="mt-4 max-w-[26ch] text-sm leading-6 text-ink-dim">
+          <p className="mt-4 max-w-[26ch] text-base leading-6 text-ink-dim">
             {copy}
           </p>
         </div>

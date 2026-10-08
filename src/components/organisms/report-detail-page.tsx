@@ -21,7 +21,7 @@ function DownloadLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex min-h-12 items-center justify-center gap-2.5 whitespace-nowrap px-6 py-3.5 text-sm font-bold transition active:translate-y-px ${full ? "w-full bg-white text-brand! hover:bg-surface" : "border border-brand/30 text-brand! hover:border-brand"}`}
+      className={`inline-flex min-h-12 items-center justify-center gap-2.5 whitespace-nowrap px-6 py-3.5 text-base font-bold transition active:translate-y-px ${full ? "w-full bg-white text-brand! hover:bg-surface" : "border border-brand/30 text-brand! hover:border-brand"}`}
     >
       Download PDF <ArrowDown size={16} weight="bold" />
     </a>
@@ -57,7 +57,7 @@ export function ReportDetailPage({
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     href="#summary"
-                    className="inline-flex min-h-12 items-center gap-2.5 whitespace-nowrap bg-brand px-6 py-3.5 text-sm font-bold text-white! transition hover:bg-brand-deep active:translate-y-px"
+                    className="inline-flex min-h-12 items-center gap-2.5 whitespace-nowrap bg-brand px-6 py-3.5 text-base font-bold text-white! transition hover:bg-brand-deep active:translate-y-px"
                   >
                     Read summary <ArrowRight size={16} weight="bold" />
                   </Link>
@@ -97,7 +97,7 @@ export function ReportDetailPage({
                   <h2 className="font-display text-lg font-bold text-purple-100">
                     Get the full report
                   </h2>
-                  <p className="mt-2 text-sm leading-6 text-purple-100/75">
+                  <p className="mt-2 text-base leading-6 text-purple-100/75">
                     Data, market profiles and recommendations.
                   </p>
                   <div className="mt-5">

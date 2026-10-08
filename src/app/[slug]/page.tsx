@@ -70,7 +70,7 @@ export default async function ArticlePage({
           <h1 className="mt-5 max-w-5xl font-display text-[clamp(2.6rem,6vw,5.8rem)] leading-[1.01] tracking-[-.045em]">
             {decodeHtml(post.title.rendered)}
           </h1>
-          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-base text-muted">
             <p>{author?.name ?? "Native Insight"}</p>
             <time dateTime={post.date}>
               {new Intl.DateTimeFormat("en-NG", { dateStyle: "long" }).format(
@@ -91,7 +91,7 @@ export default async function ArticlePage({
             </div>
           ) : null}
           <div className="mx-auto grid max-w-5xl py-[clamp(60px,8vw,100px)] lg:grid-cols-[180px_1fr] lg:gap-12">
-            <aside className="mb-8 text-sm font-semibold text-brand lg:mb-0">
+            <aside className="mb-8 text-base font-semibold text-brand lg:mb-0">
               Share this insight
             </aside>
             <div>
@@ -109,7 +109,7 @@ export default async function ArticlePage({
                       <article key={comment.id} className="bg-soft p-6">
                         <p className="font-bold">{comment.author_name}</p>
                         <div
-                          className="mt-3 text-sm leading-7 text-ink-dim"
+                          className="mt-3 text-base leading-7 text-ink-dim"
                           dangerouslySetInnerHTML={{
                             __html: comment.content.rendered,
                           }}

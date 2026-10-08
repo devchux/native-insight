@@ -20,7 +20,7 @@ export function MediaPage({ content }: { content: MediaPageContent }) {
             <h1 className="mt-5 font-display text-[clamp(2rem,5vw,4rem)] font-bold leading-[.98] tracking-[-.045em] text-brand">
               {content.title}
             </h1>
-            <p className="mt-5 max-w-xl text-sm leading-[1.75] text-ink-dim">
+            <p className="mt-5 max-w-xl text-base leading-[1.75] text-ink-dim">
               {content.introduction}
             </p>
           </Container>

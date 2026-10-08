@@ -75,7 +75,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-3.5 py-2.5 text-sm font-semibold text-ink-dim transition hover:bg-soft hover:text-brand"
+                        className="block px-3.5 py-2.5 text-base font-semibold text-ink-dim transition hover:bg-soft hover:text-brand"
                       >
                         {child.label}
                       </Link>
@@ -96,7 +96,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
         </nav>
         <Link
           href="/contact"
-          className="hidden items-center gap-2 bg-brand px-5 py-3 text-sm font-bold text-white! transition hover:bg-brand-deep lg:inline-flex"
+          className="hidden items-center gap-2 bg-brand px-5 py-3 text-base font-bold text-white! transition hover:bg-brand-deep lg:inline-flex"
         >
           Tell us your challenge <ArrowRight size={16} weight="bold" />
         </Link>
@@ -150,7 +150,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="mt-5 flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 text-sm font-bold text-white!"
+            className="mt-5 flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 text-base font-bold text-white!"
           >
             Tell us your challenge <ArrowRight size={17} weight="bold" />
           </Link>

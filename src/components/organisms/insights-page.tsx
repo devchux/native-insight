@@ -61,7 +61,7 @@ function FeaturedStory({ post }: { post: WpPost }) {
         ) : null}
         <Link
           href={`/${post.slug}`}
-          className="mt-7 inline-flex w-fit items-center gap-2 text-sm font-bold text-brand transition hover:gap-3"
+          className="mt-7 inline-flex w-fit items-center gap-2 text-base font-bold text-brand transition hover:gap-3"
         >
           Read insight <ArrowRight size={16} weight="bold" />
         </Link>
@@ -94,7 +94,7 @@ function InsightCard({ post }: { post: WpPost }) {
         </h3>
         <Link
           href={`/${post.slug}`}
-          className="mt-7 inline-flex w-fit items-center gap-2 text-sm font-bold text-brand transition hover:gap-3"
+          className="mt-7 inline-flex w-fit items-center gap-2 text-base font-bold text-brand transition hover:gap-3"
         >
           Read article <ArrowRight size={15} weight="bold" />
         </Link>
@@ -137,7 +137,7 @@ export function InsightsPage({ content, posts, categories, activeCategory }: Ins
             <nav aria-label="Filter insights" className="flex flex-wrap gap-2.5">
               <Link
                 href="/insights"
-                className={`border px-5 py-3 text-sm font-semibold transition ${!activeCategory ? "border-brand bg-brand text-white!" : "border-ink/18 hover:border-brand hover:text-brand"}`}
+                className={`border px-5 py-3 text-base font-semibold transition ${!activeCategory ? "border-brand bg-brand text-white!" : "border-ink/18 hover:border-brand hover:text-brand"}`}
               >
                 All
               </Link>
@@ -147,7 +147,7 @@ export function InsightsPage({ content, posts, categories, activeCategory }: Ins
                   <Link
                     key={category.id}
                     href={`/insights?category=${category.slug}`}
-                    className={`border px-5 py-3 text-sm font-semibold transition ${active ? "border-brand bg-brand text-white!" : "border-ink/18 hover:border-brand hover:text-brand"}`}
+                    className={`border px-5 py-3 text-base font-semibold transition ${active ? "border-brand bg-brand text-white!" : "border-ink/18 hover:border-brand hover:text-brand"}`}
                   >
                     {category.name}
                   </Link>
@@ -179,7 +179,7 @@ export function InsightsPage({ content, posts, categories, activeCategory }: Ins
               </div>
               <Link
                 href="/reports"
-                className="inline-flex min-h-12 w-fit items-center gap-3 bg-white px-6 py-3.5 text-sm font-bold text-brand! transition hover:bg-surface"
+                className="inline-flex min-h-12 w-fit items-center gap-3 bg-white px-6 py-3.5 text-base font-bold text-brand! transition hover:bg-surface"
               >
                 {content.reportLabel} <ArrowRight size={16} weight="bold" />
               </Link>
