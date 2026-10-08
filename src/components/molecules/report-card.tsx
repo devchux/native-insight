@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { decodeHtml, featuredImage } from "@/lib/content";
+import { decodeHtml, featuredImage, formatPostDate } from "@/lib/content";
 import type { WpPost } from "@/types/wordpress";
 
 export function reportHref(report: WpPost) {
@@ -28,7 +28,15 @@ export function ReportCard({ report }: { report: WpPost }) {
         <h2 className="font-display text-[clamp(1.35rem,2vw,1.75rem)] font-bold leading-[1.12] tracking-[-.03em] text-brand">
           <Link href={reportHref(report)} className="transition hover:text-accent">{title}</Link>
         </h2>
-        <p className="mt-5 text-[11px] font-semibold uppercase tracking-[.15em] text-muted">PDF · Report</p>
+        <p className="mt-5 text-[11px] font-semibold uppercase tracking-[.15em] text-muted">
+          PDF · Report
+        </p>
+        <time
+          dateTime={report.date}
+          className="mt-2 text-sm text-muted"
+        >
+          {formatPostDate(report.date)}
+        </time>
         <Link href={reportHref(report)} className="mt-6 inline-flex w-fit items-center gap-2 text-base font-bold text-brand transition hover:gap-3">
           Read report <ArrowRight size={15} weight="bold" />
         </Link>

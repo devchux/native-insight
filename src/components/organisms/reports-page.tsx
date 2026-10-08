@@ -10,16 +10,18 @@ import { Kicker } from "@/components/atoms/kicker";
 import { ReportCard, reportHref } from "@/components/molecules/report-card";
 import { SiteFooter } from "@/components/organisms/site-footer";
 import { SiteHeader } from "@/components/organisms/site-header";
-import { decodeHtml, featuredImage } from "@/lib/content";
+import { decodeHtml, featuredImage, formatPostDate } from "@/lib/content";
 import type { ReportsPageContent } from "@/lib/wordpress/reports-page";
 import type { WpPost } from "@/types/wordpress";
 
 export function ReportsPage({
   content,
   reports,
+  latestDownloadHref,
 }: {
   content: ReportsPageContent;
   reports: WpPost[];
+  latestDownloadHref?: string;
 }) {
   const flagship = reports[0];
   const flagshipImage = flagship ? featuredImage(flagship) : null;
@@ -65,6 +67,12 @@ export function ReportsPage({
                 <h2 className="mt-5 font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-[1.02] tracking-[-.04em] text-brand">
                   {decodeHtml(flagship.title.rendered)}
                 </h2>
+                <time
+                  dateTime={flagship.date}
+                  className="mt-4 text-[11px] font-semibold uppercase tracking-[.15em] text-muted"
+                >
+                  {formatPostDate(flagship.date)}
+                </time>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     href={reportHref(flagship)}
@@ -72,9 +80,9 @@ export function ReportsPage({
                   >
                     {content.readLabel} <ArrowRight size={16} weight="bold" />
                   </Link>
-                  {content.downloadHref ? (
+                  {latestDownloadHref ? (
                     <a
-                      href={content.downloadHref}
+                      href={latestDownloadHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex min-h-12 items-center gap-2.5 whitespace-nowrap border border-brand px-6 py-3.5 text-base font-bold text-brand! transition hover:border-white hover:bg-white/10 active:translate-y-px"

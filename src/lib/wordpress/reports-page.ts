@@ -47,11 +47,7 @@ export async function getReportsPageContent(): Promise<ReportsPageContent> {
       /elementor-element-7814866[\s\S]*?<div class="elementor-widget-container">([\s\S]*?)<\/div>/,
       fallback.introduction,
     ),
-    flagshipLabel: text(
-      html,
-      /elementor-element-ab31d7a[\s\S]*?elementor-heading-title[^>]*>(?:▲\s*)?([\s\S]*?)<\/div>/,
-      fallback.flagshipLabel,
-    ),
+    flagshipLabel: fallback.flagshipLabel,
     readLabel: text(
       html,
       /elementor-element-99e2c2e[\s\S]*?elementor-button-text[^>]*>([\s\S]*?)<\/span>/,

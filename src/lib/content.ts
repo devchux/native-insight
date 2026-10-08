@@ -10,6 +10,18 @@ export function decodeHtml(value: string) {
     .trim();
 }
 
+export function formatPostDate(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+}
+
 export function featuredImage(post: { _embedded?: { "wp:featuredmedia"?: Array<{ source_url: string; alt_text: string; media_details?: { width?: number; height?: number } }> } }) {
   return post._embedded?.["wp:featuredmedia"]?.[0] ?? null;
 }
