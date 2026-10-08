@@ -4,6 +4,7 @@ export type WpMedia = {
   id: number;
   alt_text: string;
   source_url: string;
+  mime_type?: string;
   media_details?: { width?: number; height?: number };
 };
 
