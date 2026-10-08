@@ -28,7 +28,7 @@ export function AcademyPage({ content }: { content: AcademyPageContent }) {
             <h1 className="mt-5 max-w-5xl font-display text-[clamp(3.2rem,6vw,5.25rem)] font-bold leading-[.96] tracking-[-.045em] text-brand">
               {content.title}
             </h1>
-            <p className="mt-6 max-w-6xl text-[clamp(1.05rem,1.55vw,1.3rem)] leading-[1.75] text-ink-dim">
+            <p className="mt-6 max-w-6xl text-base leading-[1.75] text-ink-dim">
               {content.introduction}
             </p>
           </Container>
