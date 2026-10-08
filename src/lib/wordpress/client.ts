@@ -21,7 +21,6 @@ async function wpFetch<T>(path: string, query?: Record<string, QueryValue>): Pro
   });
 
   if (!response.ok) {
-    console.log({ response });
     throw new Error(`WordPress request failed (${response.status}) for ${path}`);
   }
 
