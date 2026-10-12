@@ -40,8 +40,6 @@ export function ReportDetailPage({
   const image = featuredImage(report);
   const title = decodeHtml(report.title.rendered);
 
-  console.dir(report?.yoast_head_json, { depth: null });
-
   return (
     <>
       <SiteHeader />

@@ -31,6 +31,9 @@ const links = [
 export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [mobileSection, setMobileSection] = useState<string | null>(
+    "/insights",
+  );
   const [scrolled, setScrolled] = useState(() => !overlay);
 
   useEffect(() => {
@@ -42,6 +45,23 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
 
     return () => window.removeEventListener("scroll", updateScrolled);
   }, [overlay]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
 
   const transparent = overlay && !scrolled && !open;
 
@@ -105,7 +125,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
-          className="ml-auto grid h-11 w-11 place-items-center border border-current/30 lg:hidden"
+          className="ml-auto grid h-12 w-12 place-items-center border border-current/25 transition-[background-color,transform] duration-150 active:scale-96 lg:hidden"
         >
           <span className="sr-only">Menu</span>
           <span className="flex w-5 flex-col gap-1.5" aria-hidden="true">
@@ -124,36 +144,69 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
       {open ? (
         <nav
           aria-label="Mobile navigation"
-          className="max-h-[calc(100dvh-76px)] overflow-y-auto border-t border-ink/10 bg-white px-5 py-4 text-ink lg:hidden"
+          className="absolute inset-x-0 top-full h-[calc(100dvh-75px)] overflow-y-auto overscroll-contain border-t border-ink/10 bg-white px-[30px] pb-[max(32px,env(safe-area-inset-bottom))] pt-8 text-ink lg:hidden"
         >
-          {links.map((link) => (
-            <div key={link.href}>
-              <Link
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="block border-b border-ink/10 py-3.5 text-xl font-semibold"
-              >
-                {link.label}
-              </Link>
-              {link.children?.map((child) => (
-                <Link
-                  key={child.href}
-                  href={child.href}
-                  onClick={() => setOpen(false)}
-                  className="block border-b border-ink/10 py-2.5 pl-5 text-base text-ink-dim"
-                >
-                  {child.label}
-                </Link>
-              ))}
-            </div>
-          ))}
-          <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className="mt-5 flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 text-base font-bold text-white!"
-          >
-            Tell us your challenge <ArrowRight size={17} weight="bold" />
-          </Link>
+          {links.map((link) => {
+            const expanded = mobileSection === link.href;
+            const active =
+              pathname === link.href ||
+              link.children?.some((child) => child.href === pathname);
+
+            return (
+              <div key={link.href} className="border-b border-ink/10">
+                <div className="flex min-h-17 items-center">
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`flex min-h-12 flex-1 items-center text-[1.35rem] font-semibold leading-tight tracking-[-.02em] ${active ? "text-brand" : "text-ink"}`}
+                  >
+                    {link.label}
+                  </Link>
+                  {link.children ? (
+                    <button
+                      type="button"
+                      aria-label={`${expanded ? "Collapse" : "Expand"} ${link.label}`}
+                      aria-expanded={expanded}
+                      onClick={() =>
+                        setMobileSection(expanded ? null : link.href)
+                      }
+                      className="grid h-12 w-12 shrink-0 place-items-center transition-transform duration-150 active:scale-96"
+                    >
+                      <CaretDown
+                        aria-hidden="true"
+                        size={26}
+                        weight="bold"
+                        className={`transition-transform duration-150 ${expanded ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                  ) : null}
+                </div>
+                {expanded ? (
+                  <div className="pb-2">
+                    {link.children?.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={() => setOpen(false)}
+                        className="flex min-h-15 items-center ps-6 text-lg text-ink-dim"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+          <div className="border-b border-ink/10">
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className={`flex min-h-17 items-center text-[1.35rem] font-semibold leading-tight tracking-[-.02em] ${pathname === "/contact" ? "text-brand" : "text-ink"}`}
+            >
+              Contact
+            </Link>
+          </div>
         </nav>
       ) : null}
     </header>

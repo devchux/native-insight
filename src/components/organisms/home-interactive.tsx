@@ -66,10 +66,14 @@ export function CountUp({
   }, [value]);
 
   return (
-    <span ref={elementRef} aria-label={`${value}${suffix}`}>
-      <span aria-hidden="true">
-        {count}
-        {suffix}
+    <span
+      ref={elementRef}
+      aria-label={`${value}${suffix}`}
+      className="inline-flex items-baseline font-bold tabular-nums text-brand"
+    >
+      <span aria-hidden="true" className="inline-flex items-baseline">
+        <span>{count}</span>
+        {suffix ? <span className="text-accent">{suffix}</span> : null}
       </span>
     </span>
   );
