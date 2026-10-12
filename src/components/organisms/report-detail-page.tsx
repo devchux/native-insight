@@ -40,6 +40,8 @@ export function ReportDetailPage({
   const image = featuredImage(report);
   const title = decodeHtml(report.title.rendered);
 
+  console.dir(report?.yoast_head_json, { depth: null });
+
   return (
     <>
       <SiteHeader />
@@ -89,7 +91,7 @@ export function ReportDetailPage({
               <article
                 className="max-w-[68ch] text-[17.5px] leading-[1.7] text-ink-dim [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-3 [&_h2]:mb-4 [&_h2]:font-display [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-ink [&_img]:h-auto [&_img]:max-w-full [&_p]:mb-5 [&_p:first-of-type]:first-letter:float-left [&_p:first-of-type]:first-letter:pr-3.5 [&_p:first-of-type]:first-letter:pt-1.5 [&_p:first-of-type]:first-letter:font-display [&_p:first-of-type]:first-letter:text-[64px] [&_p:first-of-type]:first-letter:font-extrabold [&_p:first-of-type]:first-letter:leading-[.8] [&_p:first-of-type]:first-letter:text-brand"
                 dangerouslySetInnerHTML={{
-                  __html: report.content?.rendered ?? "",
+                  __html: report?.yoast_head_json?.description || "",
                 }}
               />
               {downloadHref ? (
